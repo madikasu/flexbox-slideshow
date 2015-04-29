@@ -24,6 +24,9 @@ header.slide > h1:after {
   filter: url(img/blur.svg#blur);
   filter: blur(8px);
 }
+.slide > h2 {
+ margin:0 0;
+}
 .item {
   height: 50px;
   
@@ -45,7 +48,7 @@ header.slide > h1:after {
  margin: .5em auto 0;
 }
 .example-content {
-  min-height: 300px;
+  min-height: 200px;
   padding: 10px;
 }
 .example-definition .example-content {

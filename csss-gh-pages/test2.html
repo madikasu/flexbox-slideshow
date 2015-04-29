@@ -265,7 +265,8 @@ flex-direction: inherit
 <section>
   <header class="slide" id="flex-wrap"><h1>flex-wrap</h1></header>
   <section class="slide">
-    <p>flex-wrap property specifies whether flex items are forced into a single line or can be wrapped onto multiple lines. If wrapping is allowed, this property also enables you to control the direction in which lines are stacked.</p>
+    <p><strong>flex-wrap</strong> property specifies whether flex items are forced into a single line or can be wrapped onto multiple lines. If wrapping is allowed, this property also enables you to control the direction in which lines are stacked.</p>
+    <h2>Syntax</h2>
     <pre><code class="language-css">
 flex-wrap: nowrap;
 flex-wrap: wrap;
@@ -273,6 +274,29 @@ flex-wrap: wrap-reverse;
 
 flex-wrap: inherit;
     </code></pre>
+  </section>
+  <section class="slide">
+    
+    <div class="example example-default">
+      <h2>flex-direction</h2>
+      <div class="example-content">
+        <div class="parent">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+        </div>
+      </div>
+    </div>
+    
+    <textarea>
+      .parent { 
+        display: flex; 
+        flex-wrap: nowrap;
+      }
+      .item { margin: 5px; width: 50px;}
+    </textarea>
   </section>
 </section>
 <section>
