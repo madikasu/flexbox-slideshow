@@ -1,0 +1,263 @@
+header.slide {
+  background: url(img/cover.jpg) bottom fixed;
+  background-size: cover;
+}
+
+header.slide > h1 {
+  position: absolute;
+  overflow: hidden;
+  padding: .1em .3em;
+  margin: 0;
+}
+
+header.slide > h1:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  background: url(img/cover.jpg) bottom fixed;
+  background-size: cover;
+  border-radius: inherit;
+  filter: url(img/blur.svg#blur);
+  filter: blur(8px);
+}
+
+header.slide:not(#intro) > h1 {
+  bottom: 2rem;
+  right: 2rem;
+  background: hsla(200, 100%, 50%, 1);
+  border-radius: 0 999em 999em;
+  text-align: center;
+  font-size: 300%;
+  line-height: 1;
+}
+
+header.slide > p {
+  position:absolute; 
+  padding: .1em .3em;
+  margin: 0;
+  top:2rem;
+  left:2rem;
+}
+
+.slide > h2 {
+ margin: .1em .3em;
+}
+.slide p {
+  padding: .1em .4em;
+  font-size: 80%;
+}
+
+
+
+#flexbox-vocab > h3 {
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  margin: .1em auto;
+  font-size: 90%;
+}
+#flexbox-vocab > img {
+  margin-top:50px; 
+}
+
+.example {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.2);
+  max-width: calc(100vw - 200px);
+  margin: 0px auto;
+}
+.example > h2 {
+  margin: .5em 1em 0;
+  font-size:60%;
+}
+.example-content {
+  min-height: 310px;
+  padding: 10px;
+}
+.example-definition .example-content {
+  min-height: 0px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 100;
+  color: #444;
+}
+.parent {
+ border:5px solid lightcoral; 
+}
+.item {
+  height: 50px;
+  margin: 5px;
+  background: DeepSkyBlue;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-weight: 600;
+}
+.flex {
+  display:flex;
+  margin:0 40px;
+  justify-content: space-around;
+}
+
+.flex pre {
+/*
+ width:40%; 
+ flex: 2;
+*/
+   
+}
+.flex p {
+  flex: 1; 
+  font-size:60%;
+}
+
+#intro {
+  color: white;
+}
+
+#intro h1 {
+  bottom: 1em;
+  left: 0;
+  right: 0;
+  padding: .1em .4em;
+  background: rgba(0, 0, 30, .2);
+}
+
+#intro .attribution {
+  text-align: center;
+  font-size: 75%;
+  color: rgba(0,0,30,.4);
+}
+
+
+
+.slide textarea {
+  position: fixed;
+  top: 98%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  max-height: 50%;
+  padding: .5em .8em;
+  border: 0 solid hsla(0, 0%, 100%, .8);
+  box-sizing: border-box;
+  border-top-width: .1em;
+  margin: 0;
+  outline: none;
+  background: url(img/noise.png) hsla(200, 10%, 100%, .8);
+  background: url(img/noise.png), linear-gradient(90deg, hsla(200, 10%, 80%, .9), hsla(200, 10%, 100%, .9) 20%, hsla(200, 10%, 100%, .9) 80%, hsla(200, 10%, 80%, .8));
+  box-shadow: 0 -.3em 1em -.4em black;
+  font-size: inherit;
+  text-shadow: 0 .1em .05em white;
+}
+
+.slide textarea:hover,
+.slide textarea:focus {
+  bottom: 0;
+  top: auto;
+}
+
+.darker {
+  background: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc) 0 0, linear-gradient(45deg, #ccc 25%, #eee 25%, #eee 75%, #ccc 75%, #ccc) 20px 20px #eee;
+  background-size: 40px 40px;
+}
+
+.picture {
+  display: block;
+  padding: .5em;
+  margin: .1em auto;
+/*  box-shadow: 2px 2px 10px black;*/
+  background: white;
+}
+
+.slide#lightbox {}
+
+.lightbox {
+  width: 0;
+  height: 0;
+  background: url(img/cover.jpg) center / cover, white;
+  background-clip: content-box, border-box;
+  opacity: 1 !important;
+}
+
+.lightbox.current {
+  width: 70%;
+  height: 80%;
+}
+
+.show-html:hover,
+.show-html:hover * {
+  animation-play-state: paused !important;
+}
+
+
+.slide > ul {
+  margin: auto;
+  list-style: square;
+}
+
+.info.slide > ul {
+  position: relative;
+  left: -.2em;
+  width: 11em;
+}
+
+.info.slide > h1 {
+  margin: 1em 0 .5em;
+}
+
+footer.slide {
+  text-align: center;
+  padding-top: 1em;
+}
+
+footer.slide h1 {
+  margin-top: 0;
+}
+
+footer.slide > ul {
+  width: 6em;
+  color: yellowgreen;
+  text-align: left;
+}
+
+footer.slide > ul a {
+  color: black;
+  text-decoration: none;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  width: 15em;
+  padding: 1em;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: .5em;
+  box-shadow: .1em .1em 1em rgba(0, 0, 0, .5);
+  overflow: auto;
+  background: white;
+  font-size: 60%;
+  pointer-events: none;
+}
+
+@keyframes show {
+  from {
+    opacity: .3;
+  }
+}
+
+.tooltip.active {
+  display: block;
+  animation: show .4s;
+}
+
+.tooltip > code {
+  white-space: normal;
+}
+
