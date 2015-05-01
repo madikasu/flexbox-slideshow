@@ -30,6 +30,43 @@
     <header class="slide">
       <h1>Introduction</h1>
     </header>
+    <section class="slide" title="Default Display">
+      <h2>Introduction</h2>
+      <div class="flex">
+        <pre data-content="HTML"><code class="language-markup">
+&lt;div class="parent"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+  &lt;div class="item"&gt;4&lt;/div&gt;
+  &lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+        <pre data-content="CSS"><code class="language-css">
+.item {
+  height: 50px;
+  margin: 5px;
+  text-align: center;
+}
+.parent {
+  border:5px solid lightcoral; 
+}
+        </code></pre>
+      </div>
+      <div class="example example-default">
+        <h2>Default Display</h2>
+        <div class="example-content">
+          <div class="parent">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <section class="slide" title="Flexbox: Introduction">
       <h2>What is Flexbox?</h2>
       <p>The CSS3 Flexible Box, or flexbox, is a layout mode providing for the arrangement of elements on a page such that the elements behave predictably when the page layout must accommodate different screen sizes and different display devices. For many applications, the flexible box model provides an improvement over the block model in that it does not use floats, nor do the flex container's margins collapse with the margins of its contents. </p>
@@ -44,52 +81,13 @@
         <li class="delayed"><strong>Axes</strong> Every flexible box layout follows two axes. The main axis is the axis along which the flex items follow each other. The cross axis is the axis perpendicular to the main axis.</li>
       </ul>
     </section>
-    <section class="slide" title="Default Display">
-      <div class="flex">
-        <pre data-content="HTML"><code class="language-markup">
-&lt;div class="parent"&gt;
-  &lt;div class="item"&gt;1&lt;/div&gt;
-  &lt;div class="item"&gt;2&lt;/div&gt;
-  &lt;div class="item"&gt;3&lt;/div&gt;
-  &lt;div class="item"&gt;4&lt;/div&gt;
-  &lt;div class="item"&gt;5&lt;/div&gt;
-&lt;/div&gt;
-      </code></pre>
-        <pre data-content="CSS"><code class="language-css">
-.item {
-  height: 50px;
-  margin: 5px;
-  text-align: center;
-}
-.parent {
-  border:5px solid lightcoral; 
-}
-      </code></pre>
 
-      </div>
-      <div class="example example-default">
-        <h2>Default Display</h2>
-        <div class="example-content">
-
-          <div class="parent">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-          </div>
-
-        </div>
-      </div>
-
-
-    </section>
   </section>
 
 <!-- display: flex -->
   <section> 
     <header class="slide" id="display-flex"><h1>1</h1><p>display:flex</p></header>
-    <section class="slide">
+    <section class="slide" title="display: flex">
       <p>What happens when we add display:flex to parent</p>
       <div class="example example-default">
         <h2>Default Display</h2>
@@ -137,7 +135,7 @@
 <!-- flex-direction -->
   <section> 
     <header class="slide" id="flex-direction"><h1>2</h1><p>flex-direction</p></header>
-    <section class="slide top-heavy">
+    <section class="slide top-heavy" title="flex-direction">
       <p><strong>flex-direction:</strong> specifies how flex items are placed in the flex container defining the main axis and the direction</p>
       <pre><code class="language-css">
 /* The direction text is laid out in a line */
@@ -190,7 +188,7 @@ flex-direction: column-reverse;
 <!-- flex-wrap -->
   <section>
     <header class="slide" id="flex-wrap"><h1>3</h1><p>flex-wrap</p></header>
-    <section class="slide">
+    <section class="slide"  title="flex-wrap">
       <p><strong>flex-wrap:</strong> specifies whether flex items are forced into a single line or can be wrapped onto multiple lines. If wrapping is allowed, this property also enables you to control the direction in which lines are stacked.</p>
       <h2>Syntax</h2>
       <pre><code class="language-css">
@@ -199,7 +197,7 @@ flex-wrap: wrap;
 flex-wrap: wrap-reverse;
       </code></pre>
     </section>
-    <section class="slide">
+    <section class="slide" title="flex-wrap">
       <div class="flex">
         <p><strong>flex-wrap:</strong> specifies whether flex items are forced into a single line or can be wrapped onto multiple lines. If wrapping is allowed, this property also enables you to control the direction in which lines are stacked.</p>
       <pre><code class="language-css">
@@ -235,7 +233,7 @@ flex-wrap: wrap-reverse;
 <!-- justify-content -->
   <section>
     <header class="slide" id="justify-content"><h1>4</h1><p>justify-content</p></header>
-    <section class="slide">
+    <section class="slide"  title="justify-content">
       <p><strong>justify-content:</strong> defines how the browser distributes space between and around flex items along the main-axis of their container.</p>
       <h2>Syntax</h2>
       <pre><code class="language-css">
@@ -257,7 +255,7 @@ Items have equal space around them */
 justify-content: space-around;
       </code></pre>
     </section>
-    <section class="slide">
+    <section class="slide"   title="justify-content">
       <div class="flex">
         <p><strong>justify-content:</strong> defines how the browser distributes space between and around flex items along the main-axis of their container.</p>
       <pre><code class="language-css">
@@ -296,7 +294,7 @@ justify-content: space-around;
 <!-- align-items -->
   <section>
     <header class="slide" id="align-items"><h1>4</h1><p>align-items</p></header>
-    <section class="slide">
+    <section class="slide" title="align-items">
       <p><strong>align-items:</strong> aligns flex items of the current flex line the same way as justify-content but in the perpendicular direction.</p>
       <h2>Syntax</h2>
       <pre><code class="language-css">
@@ -316,7 +314,7 @@ align-items: baseline;
 align-items: stretch;
       </code></pre>
     </section>
-    <section class="slide">
+    <section class="slide" title="align-items">
       <div class="flex">
          <p><strong>align-items:</strong> aligns flex items of the current flex line the same way as justify-content but in the perpendicular direction.</p>
       <pre><code class="language-css">
@@ -355,7 +353,7 @@ align-items: stretch;
 <!-- align-content -->
   <section>
     <header class="slide" id="align-content"><h1>5</h1><p>align-content</p></header>
-    <section class="slide">
+    <section class="slide" title="align-content">
       <p><strong>align-content:</strong> aligns a flex container's lines within the flex container when there is extra space on the cross-axis.</p>
       <h2>Syntax</h2>
       <pre><code class="language-css">
@@ -378,7 +376,7 @@ align-content: space-around;
 align-content: stretch;
       </code></pre>
     </section>
-    <section class="slide">
+    <section class="slide" title="align-content">
       <div class="flex">
          <p><strong>align-content:</strong> aligns a flex container's lines within the flex container when there is extra space on the cross-axis.</p>
       <pre><code class="language-css">
@@ -426,14 +424,14 @@ align-content: stretch;
 <!-- order -->
   <section>
     <header class="slide" id="order"><h1>6</h1><p>order</p></header>
-    <section class="slide">
+    <section class="slide" title="order">
       <p><strong>order:</strong> specifies the order used to lay out flex items in their flex container. Elements are laid out by ascending order of the order value. Elements with the same order value are laid out in the order they appear in the source code.</p>
       <h2>Syntax</h2>
       <pre><code class="language-css">
 order: &lt;integer&gt;
       </code></pre>
     </section>
-    <section class="slide">
+    <section class="slide" title="order">
       <div class="flex">
           <p><strong>order:</strong>specifies the order used to lay out flex items in their flex container. Elements are laid out by ascending order of the order value. Elements with the same order value are laid out in the order they appear in the source code.</p>
       <pre><code class="language-css">
@@ -468,17 +466,81 @@ order: &lt;integer&gt;
     </section>
   </section>
 
+
+  
+        <!-- align-self -->
+  <section>
+    <header class="slide" id="align-self"><h1>7</h1><p>align-self</p></header>
+    <section class="slide" title="align-self">
+      <p><strong>align-self:</strong> aligns flex items of the current flex line overriding the align-items value. If any of the flex item's cross-axis margin is set to auto, then align-self is ignored</p>
+      <h2>Syntax</h2>
+      <pre><code class="language-css">
+align-self: auto /* default */
+align-self: flex-start
+align-self: flex-end
+align-self: center
+align-self: baseline
+align-self: stretch
+
+      </code></pre>
+    </section>
+    <section class="slide" title="align-self">
+      <div class="flex">
+         <p><strong>align-self:</strong>aligns flex items of the current flex line overriding the align-items value. If any of the flex item's cross-axis margin is set to auto, then align-self is ignored</p>
+      <pre><code class="language-css">
+align-self: auto
+align-self: flex-start
+align-self: flex-end
+align-self: center
+align-self: baseline
+align-self: stretch
+      </code></pre>
+        
+      </div>
+      <div class="example example-default">
+        
+        <div class="example-content">
+          <div class="parent">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+      </div>
+
+      <textarea>
+.parent { 
+  display: flex; 
+  height: 200px;
+}
+.item:nth-child(1) { align-self: flex-start; }
+.item:nth-child(2) { align-self: flex-end; }
+.item:nth-child(3) { align-self: center; }
+.item:nth-child(4) { align-self: baseline; padding: 1em 0;}
+.item:nth-child(5) { align-self: baseline;}
+.item:nth-child(6) { align-self: stretch; }
+      </textarea>
+    </section>
+  </section>
+  
+
+
+
+
   <!-- flex-grow -->
   <section>
-    <header class="slide" id="flex-grow"><h1>7</h1><p>flex-grow</p></header>
-    <section class="slide">
+    <header class="slide" id="flex-grow"><h1>8</h1><p>flex-grow</p></header>
+    <section class="slide" title="flex-grow">
       <p><strong>flex-grow:</strong> specifies the flex grow factor of a flex item.</p>
       <h2>Syntax</h2>
       <pre><code class="language-css">
 flex-grow: &lt;number&gt;
       </code></pre>
     </section>
-    <section class="slide">
+    <section class="slide" title="flex-grow">
       <div class="flex">
          <p><strong>flex-grow:</strong> specifies the flex grow factor of a flex item.</p>
       <pre><code class="language-css">
@@ -509,15 +571,15 @@ flex-grow: &lt;number&gt;
   
     <!-- flex-shrink -->
   <section>
-    <header class="slide"  id="flex-shrink"><h1>8</h1><p>flex-shrink</p></header>
-    <section class="slide">
+    <header class="slide"  id="flex-shrink"><h1>9</h1><p>flex-shrink</p></header>
+    <section class="slide" title="flex-shrink">
       <p><strong>flex-shrink:</strong> specifies the flex shrink factor of a flex item.</p>
       <h2>Syntax</h2>
       <pre><code class="language-css">
 flex-shrink: &lt;number&gt;
       </code></pre>
     </section>
-    <section class="slide">
+    <section class="slide" title="flex-shrink">
       <div class="flex">
          <p><strong>flex-shrink:</strong> specifies the flex shrink factor of a flex item.</p>
       <pre><code class="language-css">
@@ -551,8 +613,8 @@ flex-shrink: &lt;number&gt;
   
       <!-- flex-basis -->
   <section>
-    <header class="slide" id="flex-basis"><h1>9</h1><p>flex-basis</p></header>
-    <section class="slide">
+    <header class="slide" id="flex-basis"><h1>10</h1><p>flex-basis</p></header>
+    <section class="slide" title="flex-basis">
       <p><strong>flex-basis:</strong>specifies the flex basis which is the initial main size of a flex item. The property determines the size of the content-box unless specified otherwise using box-sizing.</p>
       <h2>Syntax</h2>
       <pre><code class="language-css">
@@ -562,7 +624,7 @@ flex-basis: auto      /* <'width'> (default) */
 flex-basis: content
       </code></pre>
     </section>
-    <section class="slide">
+    <section class="slide" title="flex-basis">
       <div class="flex">
          <p><strong>flex-basis:</strong>specifies the flex basis which is the initial main size of a flex item. The property determines the size of the content-box unless specified otherwise using box-sizing.</p>
       <pre><code class="language-css">
@@ -598,8 +660,8 @@ flex-basis: content
   
         <!-- flex -->
   <section>
-    <header class="slide" id="flex-shorthand"><h1>10</h1><p>flex</p></header>
-    <section class="slide">
+    <header class="slide" id="flex-shorthand"><h1>11</h1><p>flex</p></header>
+    <section class="slide"  title="flex">
       <p><strong>flex:</strong>is a shorthand property specifying the ability of a flex item to alter its dimensions to fill available space. Flex items can be stretched to use available space proportional to their flex grow factor or their flex shrink factor to prevent overflow.</p>
       <h2>Syntax</h2>
       <pre><code class="language-css">
@@ -625,7 +687,7 @@ flex: 2 2;
 flex: 2 2 10%;
       </code></pre>
     </section>
-    <section class="slide">
+    <section class="slide" title="flex">
       <div class="flex">
          <p><strong>flex:</strong>is a shorthand property specifying the ability of a flex item to alter its dimensions to fill available space. Flex items can be stretched to use available space proportional to their flex grow factor or their flex shrink factor to prevent overflow.</p>
       <pre><code class="language-css">
@@ -659,59 +721,6 @@ flex: 2 2 10%;
 }
 .item { }
 .item:nth-child(2){ flex:content;}
-      </textarea>
-    </section>
-  </section>
-  
-  
-        <!-- align-self -->
-  <section>
-    <header class="slide" id="align-self"><h1>11</h1><p>align-self</p></header>
-    <section class="slide">
-      <p><strong>align-self:</strong> aligns flex items of the current flex line overriding the align-items value. If any of the flex item's cross-axis margin is set to auto, then align-self is ignored</p>
-      <h2>Syntax</h2>
-      <pre><code class="language-css">
-align-self: auto /* default */
-align-self: flex-start
-align-self: flex-end
-align-self: center
-align-self: baseline
-align-self: stretch
-
-      </code></pre>
-    </section>
-    <section class="slide">
-      <div class="flex">
-         <p><strong>align-self:</strong>aligns flex items of the current flex line overriding the align-items value. If any of the flex item's cross-axis margin is set to auto, then align-self is ignored</p>
-      <pre><code class="language-css">
-align-self: auto
-align-self: flex-start
-align-self: flex-end
-align-self: center
-align-self: baseline
-align-self: stretch
-      </code></pre>
-        
-      </div>
-      <div class="example example-default">
-        
-        <div class="example-content">
-          <div class="parent">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-          </div>
-        </div>
-      </div>
-
-      <textarea>
-.parent { 
-  display: flex; 
-  height: 200px;
-}
-.item:nth-child(2) { align-self: auto; }
       </textarea>
     </section>
   </section>
