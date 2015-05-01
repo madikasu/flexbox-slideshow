@@ -1,3 +1,5 @@
+/// <reference path="plugins/css-snippets.js" />
+
 $$('.iframe.slide').forEach(function(slide) {
 	slide.classList.add('dont-resize');
 });
@@ -8,19 +10,19 @@ $$('textarea').forEach(function(textarea) {
 	new CSSSnippet(textarea);
 });
 
-StyleFix.register(function(css, raw) {
-	if (PrefixFree.functions.indexOf('radial-gradient') > -1) {
-		css = css.replace(/radial-gradient\(([\w\s%-]+\s+)?at ([^,]+)(?=,)/g, function($0, shape, center){
-			return 'radial-gradient(' + center + (shape? ', ' + shape : '');
-		});
-	}
-	
-	if (PrefixFree.Prefix + 'Filter' in document.body.style) {
-		css = css.replace(/\bfilter:/ig, PrefixFree.prefix + 'filter:');
-	}
-	
-	return css;
-});
+//StyleFix.register(function(css, raw) {
+//	if (PrefixFree.functions.indexOf('radial-gradient') > -1) {
+//		css = css.replace(/radial-gradient\(([\w\s%-]+\s+)?at ([^,]+)(?=,)/g, function($0, shape, center){
+//			return 'radial-gradient(' + center + (shape? ', ' + shape : '');
+//		});
+//	}
+//	
+//	if (PrefixFree.Prefix + 'Filter' in document.body.style) {
+//		css = css.replace(/\bfilter:/ig, PrefixFree.prefix + 'filter:');
+//	}
+//	
+//	return css;
+//});
 
 //$$('#total-support dfn').forEach(function(dfn) {
 //	dfn.textContent = $$('section > section.slide .browser-support > dfn[title="' + dfn.title + '"]:not(:empty)').length

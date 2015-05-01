@@ -189,7 +189,7 @@ iframe.csss-import {
   margin: 0;
 }
 
-iframe.csss-import {}
+
 
 iframe.csss-import:not(.show) {
   z-index: -1;

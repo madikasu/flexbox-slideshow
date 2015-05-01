@@ -4,16 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <title>FlexBox: All the things</title>
-  <base href="/flexbox/" />
+  <base href="./" />
   <link href="css/slideshow.css" rel="stylesheet" />
   <link href="css/reusable.css" rel="stylesheet" />
   <link href="css/theme.css" rel="stylesheet" />
   <link href="css/flextalk.css" rel="stylesheet" />
+  
   <script src="js/prefixfree.min.js"></script>
 
 </head>
 
-<body>
+<body data-duration="60">
 
   <header id="intro" class="demo slide dont-resize darker">
     <h1>
@@ -344,10 +345,9 @@ align-items: stretch;
 .parent { 
   height:200px;
   display: flex; 
-  justify-content: space-around;
   align-items: flex-start;
 }
-.item { width: 50px;}
+.item { width: 50px; font-size:20px;}
       </textarea>
     </section>
   </section>
@@ -409,20 +409,25 @@ align-content: stretch;
   height:200px;
   display: flex; 
   flex-wrap: wrap;
-  align-content: center;
+  align-content: stretch;
 }
-.item { width: 50px;}
+.item { width: 20%; height:50px;}
       </textarea>
     </section>
   </section>
-
+  <section>
+    <header class="slide" id="flexitems">
+      <p>Properties for the Children</p><p class="sub">(flex items)</p>
+      
+    </header>
+  </section>
 
 
 <!-- order -->
   <section>
     <header class="slide" id="order"><h1>6</h1><p>order</p></header>
     <section class="slide">
-      <p><strong>order:</strong>specifies the order used to lay out flex items in their flex container. Elements are laid out by ascending order of the order value. Elements with the same order value are laid out in the order they appear in the source code.</p>
+      <p><strong>order:</strong> specifies the order used to lay out flex items in their flex container. Elements are laid out by ascending order of the order value. Elements with the same order value are laid out in the order they appear in the source code.</p>
       <h2>Syntax</h2>
       <pre><code class="language-css">
 order: &lt;integer&gt;
@@ -454,6 +459,11 @@ order: &lt;integer&gt;
   display: flex; 
 }
 .item { width: 50px;}
+.item:nth-child(1){order:0;}
+.item:nth-child(2){order:0;}
+.item:nth-child(3){order:0;}
+.item:nth-child(4){order:0;}
+.item:nth-child(5){order:0;}
       </textarea>
     </section>
   </section>
@@ -499,7 +509,7 @@ flex-grow: &lt;number&gt;
   
     <!-- flex-shrink -->
   <section>
-    <header class="slide incomplete" id="flex-shrink"><h1>6</h1><p>flex-shrink</p></header>
+    <header class="slide"  id="flex-shrink"><h1>8</h1><p>flex-shrink</p></header>
     <section class="slide">
       <p><strong>flex-shrink:</strong> specifies the flex shrink factor of a flex item.</p>
       <h2>Syntax</h2>
@@ -541,7 +551,7 @@ flex-shrink: &lt;number&gt;
   
       <!-- flex-basis -->
   <section>
-    <header class="slide incomplete" id="flex-basis"><h1>6</h1><p>flex-basis</p></header>
+    <header class="slide" id="flex-basis"><h1>9</h1><p>flex-basis</p></header>
     <section class="slide">
       <p><strong>flex-basis:</strong>specifies the flex basis which is the initial main size of a flex item. The property determines the size of the content-box unless specified otherwise using box-sizing.</p>
       <h2>Syntax</h2>
@@ -586,9 +596,144 @@ flex-basis: content
     </section>
   </section>
   
+        <!-- flex -->
+  <section>
+    <header class="slide" id="flex-shorthand"><h1>10</h1><p>flex</p></header>
+    <section class="slide">
+      <p><strong>flex:</strong>is a shorthand property specifying the ability of a flex item to alter its dimensions to fill available space. Flex items can be stretched to use available space proportional to their flex grow factor or their flex shrink factor to prevent overflow.</p>
+      <h2>Syntax</h2>
+      <pre><code class="language-css">
+/* 0 0 auto */
+flex: none;
+
+/* One value, unitless number: flex-grow */
+flex: 2;
+
+/* One value, width/height: flex-basis */
+flex: 10em;
+flex: 30px;
+flex: auto;
+flex: content;
+
+/* Two values: flex-grow | flex-basis */
+flex: 1 30px;
+
+/* Two values: flex-grow | flex-shrink */
+flex: 2 2;
+
+/* Three values: flex-grow | flex-shrink | flex-basis */
+flex: 2 2 10%;
+      </code></pre>
+    </section>
+    <section class="slide">
+      <div class="flex">
+         <p><strong>flex:</strong>is a shorthand property specifying the ability of a flex item to alter its dimensions to fill available space. Flex items can be stretched to use available space proportional to their flex grow factor or their flex shrink factor to prevent overflow.</p>
+      <pre><code class="language-css">
+flex: none;
+flex: 2;
+flex: 30px;
+flex: auto;
+flex: content;
+flex: 1 30px;
+flex: 2 2;
+flex: 2 2 10%;
+      </code></pre>
+        
+      </div>
+      <div class="example example-default">
+        
+        <div class="example-content">
+          <div class="parent">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+          </div>
+        </div>
+      </div>
+
+      <textarea>
+.parent { 
+  display: flex; 
+}
+.item { }
+.item:nth-child(2){ flex:content;}
+      </textarea>
+    </section>
+  </section>
   
   
+        <!-- align-self -->
+  <section>
+    <header class="slide" id="align-self"><h1>11</h1><p>align-self</p></header>
+    <section class="slide">
+      <p><strong>align-self:</strong> aligns flex items of the current flex line overriding the align-items value. If any of the flex item's cross-axis margin is set to auto, then align-self is ignored</p>
+      <h2>Syntax</h2>
+      <pre><code class="language-css">
+align-self: auto /* default */
+align-self: flex-start
+align-self: flex-end
+align-self: center
+align-self: baseline
+align-self: stretch
+
+      </code></pre>
+    </section>
+    <section class="slide">
+      <div class="flex">
+         <p><strong>align-self:</strong>aligns flex items of the current flex line overriding the align-items value. If any of the flex item's cross-axis margin is set to auto, then align-self is ignored</p>
+      <pre><code class="language-css">
+align-self: auto
+align-self: flex-start
+align-self: flex-end
+align-self: center
+align-self: baseline
+align-self: stretch
+      </code></pre>
+        
+      </div>
+      <div class="example example-default">
+        
+        <div class="example-content">
+          <div class="parent">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+          </div>
+        </div>
+      </div>
+
+      <textarea>
+.parent { 
+  display: flex; 
+  height: 200px;
+}
+.item:nth-child(2) { align-self: auto; }
+      </textarea>
+    </section>
+  </section>
   
+  <section>
+      <header class="slide" id="examples"><h1>12</h1><p>Examples</p></header>
+      
+      <div class="slide" data-src="http://philipwalton.github.io/solved-by-flexbox/" title="Solved by Flexbox"></div>
+      <div class="slide" data-src="http://flexboxin5.com/" title="flexbox in 5 minutes"></div>
+        
+  </section>
+  <section class="powerpoint slide" id="making-of">
+	<h1>Making of</h1>
+	
+	<ul>
+		<li>This slide deck was entirely built with open web technologies!</li>
+		<li>Slideshow framework: <a href="http://github.com/LeaVerou/CSSS">github.com/LeaVerou/CSSS</a></li>
+		<li>Syntax highlighting with Prism (<a href="http://prismjs.com">prismjs.com</a>)</li>
+	</ul>
+	
+	<p><strong>Slides at <a href="http://d-miller/flexbox">d-miller/more-css-secrets</a></strong></p>
+</section>
   
   <footer class="slide">
       <h2>Thank you!</h2>
